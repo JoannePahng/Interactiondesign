@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>broke-newyorker.com</title>
+
+<style type="text/css">
+body {
+    background-color: black;
+    color: beige;
+    font-family: garamond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 150px;
+    margin: 0;
+}
+
+h2 {
+    color: hotpink;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+h3 {
+    color: beige;
+    font-size: 18px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+.box {
+    width: auto;
+    padding: 10px 20px;
+    border: none; /* Removed the blue outline */
+    border-radius: 5px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: underline; /* Added underline */
+}
+
+p {
+    font-size: 20px;
+    color: navajowhite;
+    font-family: monospace;
+    margin: 0;
+}
+
+.about-us {
+    width: 200px;
+    height: 40px;
+    border: none; /* Removed the beige outline */
+    border-radius: 5px;
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    color: beige;
+    cursor: pointer;
+    text-decoration: underline; /* Added underline */
+}
+
+.help-button {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.help-button:focus,
+.box:focus,
+.about-us:focus {
+    outline: none; /* Prevents any focus outline from appearing */
+}
+</style>
+<script>
+function navigateToTransit() {
+    window.location.href = "page2.html";
+}
+
+function navigateToExplore() {
+    window.location.href = "page4.html";
+}
+
+function navigateToToilet() {
+    window.location.href = "page5.html";
+}
+
+function navigateToAboutUs() {
+    window.location.href = "page3.html";
+}
+
+function navigateToHelpPage() {
+    window.location.href = "page9.html";
+}
+</script>
+</head>
+<body>
+
+<h1>WELCOME</h1>
+<h2>broke new yorkers</h2>
+
+<div class="box" onclick="navigateToTransit()">
+    <p>open_manhattan_transit</p>
+</div>
+
+<div class="box" onclick="navigateToExplore()">
+    <p>open_manhattan_explore</p>
+</div>
+
+
+
+
+<div class="about-us" onclick="navigateToAboutUs()">
+    <p>ABOUT US</p>
+</div>
+
+<!-- Help button -->
+<button class="help-button" onclick="navigateToHelpPage()">?</button>
+
+</body>
+</html>
