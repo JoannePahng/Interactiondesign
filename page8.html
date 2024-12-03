@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Yorkers</title>
+
+<style type="text/css">
+body {
+    background-color: white;
+    color: black;
+    font-family: garamond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 150px;
+    margin: 0;
+}
+
+h2 {
+    color: blue;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+h3 {
+    color: black;
+    font-size: 18px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+.box {
+    width: auto;
+    padding: 10px 20px;
+    border: 2px solid black; 
+    border-radius: 5px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: black;
+    font-family: monospace;
+    margin: 0;
+}
+
+.about-us {
+    width: 200px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    color: black;
+    cursor: pointer;
+}
+</style>
+<script>
+function navigateToTransit() {
+    window.location.href = "page2.html";
+}
+
+function navigateToExplore() {
+    window.location.href = "page4.html";
+}
+
+function navigateToStudy() {
+    window.location.href = "page5.html";
+}
+
+function navigateToAboutUs() {
+    window.location.href = "page3.html";
+}
+</script>
+</head>
+<body>
+
+<h1>WELCOME</h1>
+<h2>New Yorkers</h2>
+
+<div class="box" onclick="navigateToTransit()">
+    <p>open_manhattan_transit</p>
+</div>
+
+<div class="box" onclick="navigateToExplore()">
+    <p>open_manhattan_explore</p>
+</div>
+
+<div class="box" onclick="navigateToStudy()">
+    <p>open_manhattan_study</p>
+</div>
+
+<div class="about-us" onclick="navigateToAboutUs()">
+    <p>ABOUT US</p>
+</div>
+
+</body>
+</html>

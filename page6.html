@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive Manhattan Map</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .map-container {
+            position: relative;
+            width: 1000px; /* Increased width to match page 5 */
+            height: 1800px; /* Increased height to match page 5 */
+            background-image: url('image.jpg'); /* Use the new image */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .location {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+
+        .location:hover {
+            background-color: yellow;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 5px;
+            background-color: white;
+            color: black;
+            font-size: 12px;
+            border-radius: 4px;
+            display: none;
+            transform: translate(-50%, -120%);
+        }
+
+        .location:hover .tooltip {
+            display: block;
+        }
+
+        /* Locations with relative positioning */
+        .location-summit { top: 1000px; left: 550px; } /* Summit One Vanderbilt */
+        .location-edge { top: 1120px; left: 460px; } /* Edge NYC */
+        .location-saks { top: 950px; left: 500px; } /* Saks Fifth Avenue */
+        .location-bloomingdales { top: 920px; left: 570px; } /* Bloomingdale's */
+        .location-korea-town { top: 1040px; left: 520px; } /* Korea Town */
+        .location-the-met { top: 780px; left: 560px; } /* The MET */
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- Locations on the map -->
+        <div class="location location-summit" onclick="openGoogleMap('Summit One Vanderbilt, Manhattan, NY')">
+            <div class="tooltip">Summit One Vanderbilt</div>
+        </div>
+        <div class="location location-edge" onclick="openGoogleMap('Edge NYC, Manhattan, NY')">
+            <div class="tooltip">Edge NYC</div>
+        </div>
+        <div class="location location-saks" onclick="openGoogleMap('Saks Fifth Avenue, Manhattan, NY')">
+            <div class="tooltip">Saks Fifth Avenue</div>
+        </div>
+        <div class="location location-bloomingdales" onclick="openGoogleMap('Bloomingdale\'s, Manhattan, NY')">
+            <div class="tooltip">Bloomingdale's</div>
+        </div>
+        <div class="location location-korea-town" onclick="openGoogleMap('Korea Town, Manhattan, NY')">
+            <div class="tooltip">Korea Town</div>
+        </div>
+        <div class="location location-the-met" onclick="openGoogleMap('The MET, Manhattan, NY')">
+            <div class="tooltip">The MET</div>
+        </div>
+    </div>
+
+    <script>
+        function openGoogleMap(location) {
+            const baseUrl = "https://www.google.com/maps/search/?api=1&query=";
+            const url = baseUrl + encodeURIComponent(location);
+            window.open(url, "_blank");
+        }
+    </script>
+</body>

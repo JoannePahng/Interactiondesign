@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive Manhattan Map</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .map-container {
+            position: relative;
+            width: 1000px; /* Increased width */
+            height: 1800px; /* Increased height */
+            background-image: url('image.jpg');
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .location {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+
+        .location:hover {
+            background-color: yellow;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 5px;
+            background-color: white;
+            color: black;
+            font-size: 12px;
+            border-radius: 4px;
+            display: none;
+            transform: translate(-50%, -120%);
+        }
+
+        .location:hover .tooltip {
+            display: block;
+        }
+
+        /* Location positions on the map (same positions, since relative spacing is maintained) */
+        .location-14th { top: 1150px; left: 550px; }
+        .location-23rd { top: 1120px; left: 550px; }
+        .location-roosevelt { top: 900px; left: 670px; }
+        .location-broadway { top: 1205px; left: 570px; }
+        .location-34th { top: 995px; left: 520px; }
+        .location-lexington { top: 900px; left: 600px; }
+        .location-33rd { top: 1015px; left: 530px; }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- Original Locations -->
+        <div class="location location-14th" onclick="openGoogleMap('14th Street, Manhattan, NY')">
+            <div class="tooltip">14th Street</div>
+        </div>
+        <div class="location location-23rd" onclick="openGoogleMap('23rd Street, Manhattan, NY')">
+            <div class="tooltip">23rd Street</div>
+        </div>
+        <div class="location location-roosevelt" onclick="openGoogleMap('Roosevelt Island, NY')">
+            <div class="tooltip">Roosevelt Island</div>
+        </div>
+
+        <!-- Updated Locations -->
+        <div class="location location-broadway" onclick="openGoogleMap('Broadway Lafayette, Manhattan, NY')">
+            <div class="tooltip">Broadway Lafayette</div>
+        </div>
+        <div class="location location-34th" onclick="openGoogleMap('34 St-Herald Square, Manhattan, NY')">
+            <div class="tooltip">34 St-Herald Sq</div>
+        </div>
+        <div class="location location-lexington" onclick="openGoogleMap('Lexington Av/63 St, Manhattan, NY')">
+            <div class="tooltip">Lexington Av/63 St</div>
+        </div>
+        <div class="location location-33rd" onclick="openGoogleMap('33rd Street, Manhattan, NY')">
+            <div class="tooltip">33rd Street</div>
+        </div>
+    </div>
+
+    <script>
+        function openGoogleMap(location) {
+            const baseUrl = "https://www.google.com/maps/search/?api=1&query=";
+            const url = baseUrl + encodeURIComponent(location);
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>

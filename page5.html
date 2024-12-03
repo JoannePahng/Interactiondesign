@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive Manhattan Map</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .map-container {
+            position: relative;
+            width: 1000px; /* Increased width to match page 2 */
+            height: 1800px; /* Increased height to match page 2 */
+            background-image: url('image.jpg'); /* Use the new image */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .location {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: orange;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+
+        .location:hover {
+            background-color: yellow;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 5px;
+            background-color: white;
+            color: black;
+            font-size: 12px;
+            border-radius: 4px;
+            display: none;
+            transform: translate(-50%, -120%);
+        }
+
+        .location:hover .tooltip {
+            display: block;
+        }
+
+        /* New locations with adjusted pixel positions based on the container size (moved down 100px) */
+        .location-14th { top: 1150px; left: 550px; }
+        .location-23rd { top: 1130px; left: 550px; }
+        .location-28th { top: 1110px; left: 550px; }
+        .location-33rd { top: 1080px; left: 530px; }
+        .location-34th { top: 1055px; left: 520px; }
+        .location-42nd { top: 1035px; left: 530px; }
+        .location-grand-central { top: 975px; left: 549px; }
+        .location-47th { top: 1015px; left: 500px; }
+        .location-51st { top: 990px; left: 470px; }
+        .location-57th { top: 930px; left: 470px; }
+        .location-lexington { top: 910px; left: 600px; }
+        .location-west4th { top: 1200px; left: 540px; }
+        .location-broadway-lafayette { top: 1250px; left: 550px; }
+        .location-3av { top: 1170px; left: 600px; }
+        .location-1stav { top: 1170px; left: 670px; }
+        .location-6av { top: 1170px; left: 490px; }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- New Points on the Map -->
+        <div class="location location-14th" onclick="openGoogleMap('14th Street, Manhattan, NY')">
+            <div class="tooltip">14th Street</div>
+        </div>
+        <div class="location location-23rd" onclick="openGoogleMap('23rd Street, Manhattan, NY')">
+            <div class="tooltip">23rd Street</div>
+        </div>
+        <div class="location location-28th" onclick="openGoogleMap('28th Street, Manhattan, NY')">
+            <div class="tooltip">28 St</div>
+        </div>
+        <div class="location location-33rd" onclick="openGoogleMap('33rd Street, Manhattan, NY')">
+            <div class="tooltip">33rd St</div>
+        </div>
+        <div class="location location-34th" onclick="openGoogleMap('34th St-Herald Sq, Manhattan, NY')">
+            <div class="tooltip">34th St-Herald Sq</div>
+        </div>
+        <div class="location location-42nd" onclick="openGoogleMap('42nd St-Bryant Park, Manhattan, NY')">
+            <div class="tooltip">42nd St-Bryant Pk</div>
+        </div>
+        <div class="location location-grand-central" onclick="openGoogleMap('Grand Central Terminal, Manhattan, NY')">
+            <div class="tooltip">Grand Central</div>
+        </div>
+        <div class="location location-47th" onclick="openGoogleMap('47-50 Sts-Rockefeller Center, Manhattan, NY')">
+            <div class="tooltip">47-50 Sts-Rockefeller Ctr</div>
+        </div>
+        <div class="location location-51st" onclick="openGoogleMap('51st Street, Manhattan, NY')">
+            <div class="tooltip">51 St</div>
+        </div>
+        <div class="location location-57th" onclick="openGoogleMap('57th Street, Manhattan, NY')">
+            <div class="tooltip">57th Street</div>
+        </div>
+        <div class="location location-lexington" onclick="openGoogleMap('Lexington Av/63 St, Manhattan, NY')">
+            <div class="tooltip">Lexington Av/63 St</div>
+        </div>
+        <div class="location location-west4th" onclick="openGoogleMap('West 4th Street, Manhattan, NY')">
+            <div class="tooltip">West 4th Street</div>
+        </div>
+        <div class="location location-broadway-lafayette" onclick="openGoogleMap('Broadway Lafayette, Manhattan, NY')">
+            <div class="tooltip">Broadway Lafayette</div>
+        </div>
+        <div class="location location-3av" onclick="openGoogleMap('3 Av, Manhattan, NY')">
+            <div class="tooltip">3 Av</div>
+        </div>
+        <div class="location location-1stav" onclick="openGoogleMap('1st Av, Manhattan, NY')">
+            <div class="tooltip">1st Av</div>
+        </div>
+        <div class="location location-6av" onclick="openGoogleMap('6 Av, Manhattan, NY')">
+            <div class="tooltip">6 Av</div>
+        </div>
+    </div>
+
+    <script>
+        function openGoogleMap(location) {
+            const baseUrl = "https://www.google.com/maps/search/?api=1&query=";
+            const url = baseUrl + encodeURIComponent(location);
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
